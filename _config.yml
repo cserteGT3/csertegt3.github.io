@@ -1,4 +1,4 @@
-title:            My leightweight blog
+title:            Tomi's adventures on codelands
 description:      For myself.
 
 # put your disqus here
@@ -23,20 +23,13 @@ menu:
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
-  - title: 'Favorites'
-    url: '#'
-    submenu:
-      - title: 'Code Highlighter'
-        url: '/intro/code-highlighting-post/'
-      - title: 'Sample Post'
-        url: '/intro/sample-post/'
 
 # Owner/author information
 owner:
   name:           Tamás Cserteg
   site:           https://cserteGT3.github.io/
   avatar:         images/avatar.jpg
-  bio:            "I'm Tamás Cserteg, mechatronics engineer in Hungary."
+  bio:            "I'm Tamás Cserteg, mechatronics engineer from Hungary."
   email:          yupp@notyupp.com
   # Twitter nick for use in Twitter cards and follow button.
   twitter: cserteGT3 # if no twitter in this config, the twitter follow button will be removed
@@ -52,7 +45,7 @@ social:
   - title: "github"
     url: "https://github.com/cserteGT3"
   - title: "linkedin"
-    url: "https://br.linkedin.com/in/aronbordin"
+    url: "https://www.linkedin.com/in/tam%C3%A1s-cserteg/"
 
 # Background image to be tiled on all pages
 background:
@@ -80,7 +73,7 @@ permalink:   /:categories/:title/
 paginate: 5
 
 # if true, shows the floatting share buttons
-float_share: true
+float_share: false
 
 # Octopress
 # Default extensions
@@ -95,4 +88,4 @@ titlecase: true
 include: [".htaccess"]
 exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 gems: [jekyll-paginate]
-theme: neo-hpstr-jekyll-theme
+remote_theme: neo-hpstr-jekyll-theme
