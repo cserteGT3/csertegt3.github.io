@@ -15,9 +15,9 @@ I decided to use the [Neo-HPSTR Theme](https://github.com/aron-bordin/neo-hpstr-
 
 ## TODO list
 
-[ ] get a new icon
-[ ] change welcome text
-[ ] set up atom / julia for editing posts
-[ ] change the header links
-[ ] read through the docs, and the example posts
-[ ] remove or change images
+- get a new icon
+- change welcome text
+- set up atom / julia for editing posts
+- change the header links
+- read through the docs, and the example posts
+- remove or change images
