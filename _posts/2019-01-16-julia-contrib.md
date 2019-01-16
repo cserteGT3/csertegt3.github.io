@@ -2,7 +2,7 @@
 layout: post
 title: How to contribute to a Julia package
 description: "A short guide on contributing Julia packages."
-modified: 2018-12-27
+modified: 2019-01-16
 tags: [julia, GitHub]
 categories: [julia]
 ---
