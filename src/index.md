@@ -1,4 +1,4 @@
-@def title = "cserteGT3.github.io"
+@def title = "Home"
 @def hasmath = true
 @def hascode = true
 <!-- Note: by default hasmath == true and hascode == false. You can change this in
