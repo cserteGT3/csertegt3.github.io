@@ -1,0 +1,27 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/katex/katex.min.css"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link href="/css/judoc.css" rel=stylesheet > <link href="/css/vela.css" rel=stylesheet > <script src="/libs/vela/jquery.min.js"></script> <link rel=icon  href="/assets/infra/favicon.png"> <title>cserteGT3</title> <div class=main-nav  id=menu > <div class=flex-container > <span class=sidebar-brand > <h3 style='font-size: 25px'>cserteGT3's blog</h3> </span> </div> <nav class=sidebar-nav > <ul class=metismenu  id=metismenu  > <li><a href="/index.html">Home</a> <li><a href="" class=has-arrow >Julia</a> <ul> <li><a href="/pub/julia/julia-contrib.html">How to contribute to Julia</a> </ul> <ul> <li><a href="/pub/julia/julia-env.html">Environments in Julia</a> </ul> <ul> <li><a href="/pub/julia/2019-02-25-using-julia.html">Useful thoughts on Julia</a> </ul> <li><a href="" class=has-arrow >Tutorials</a> <ul> <li><a href="/pub/tutorials/2019-04-09-yt-download-setup.html">Installing youtube-dl</a> </ul> <ul> <li><a href="/pub/tutorials/2019-01-04-jekyll-setup.html">Setup Jekyll on Windows</a> </ul> </ul> </nav> </div> <main id=panel > <div class="toggle-button hamburger hamburger--spin"> <div class=hamburger-box > <div class=hamburger-inner ></div> </div> </div> <h1 class="page title">How to setup youtube-dl</h1> <hr> <div class=jd-content > <p>This post is on installing the <a href="https://github.com/ytdl-org/youtube-dl/">youtube-dl</a> tool on a Windows computer.</p> <h2><a id=download  href="#download">Download</a></h2> <p>The <a href="https://github.com/ytdl-org/youtube-dl/">installation instructions</a> are pretty straightforward. For windows you can download the <a href="https://yt-dl.org/latest/youtube-dl.exe">latest</a>, or search for what you want at the <a href="https://ytdl-org.github.io/youtube-dl/download.html">download page</a>.</p> <h2><a id=place-and-path-it  href="#place-and-path-it">Place and PATH it</a></h2> <p>Again, check the installation instructions, but <code>C:\Users\username\yt-dl</code> is for example a good place for the <code>.exe</code> file. Put that folder into your PATH variable &#40;usually in your own user&#39;s PATH&#41;. In english search for the term: <code>windows path variable</code>, in hungarian: <code>windows path környezeti változó</code>. At this point the following should work &#40;of course with your installed version&#41;: <pre><code class="bash hljs">C:\Users\username\youtube-dl --version
+2019.02.18
+</code></pre> If this works, you have succesfully installed youtube-dl.</p> <h2><a id=useful-batch-files  href="#useful-batch-files">Useful batch files</a></h2> <p>The following commands are useful &#40;for me at least&#41;. These are for windows. Create a new textfile and rename it to <code>something.bat</code>. Tested only with youtube.</p> <h3><a id=download-audiobat  href="#download-audiobat">download-audio.bat</a></h3> <p>Download the video and extract the audio to mp3 &#40;best quality&#41;. Video file is deleted afterward. <pre><code class=hljs>@echo off
+
+set /P dl&#61;YouTube URL:
+
+youtube-dl --extract-audio --audio-format mp3 --audio-quality 0  &#37;dl&#37;
+
+pause</code></pre> <h3><a id=download-audio-keepvidbat  href="#download-audio-keepvidbat">download-audio-keepvid.bat</a></h3> <p>Download the video and extract the audio to mp3 &#40;best quality&#41;. Keep the original video.</p> <pre><code class=hljs>@echo off
+
+set /P dl&#61;YouTube URL:
+
+youtube-dl --keep-video --extract-audio --audio-format mp3 --audio-quality 0  &#37;dl&#37;
+
+pause</code></pre> <h3><a id=download-video-1080pbat  href="#download-video-1080pbat">download-video-1080p.bat</a></h3> <p>Download the best resolution, but 1920×1080p maximum.</p> <pre><code class=hljs>@echo off
+
+set /P dl&#61;YouTube URL:
+
+youtube-dl -f &quot;bestvideo&#91;height&lt;&#61;1080&#93;&#43;bestaudio/best&#91;height&lt;&#61;1080&#93;&quot; &#37;dl&#37;
+
+pause</code></pre> <h3><a id=download-video-fullresbat  href="#download-video-fullresbat">download-video-fullres.bat</a></h3> <p>Download the video at the best available resolution.</p> <pre><code class=hljs>@echo off
+
+set /P dl&#61;YouTube URL:
+
+youtube-dl &#37;dl&#37;
+
+pause</code></pre> </p> <div class=page-foot > <div class=copyright > &copy; cserteGT3. Last modified: June 16, 2019. Website built with <a href="https://github.com/tlienart/JuDoc.jl">JuDoc.jl</a>. </div> </div> </div> </main> <script src="/libs/vela/metisMenu.min.js"></script> <script src="/libs/vela/slideout.min.js"></script>
