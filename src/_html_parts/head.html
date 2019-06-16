@@ -3,43 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{if hasmath}} {{insert head_katex.html }}     {{end}}
+  {{if hasmath}} {{insert head_katex.html }}   {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
-  <link rel="stylesheet" href="/css/judoc.css">
-  <link rel="stylesheet" href="/css/poole_lanyon.css">
-  <link rel="stylesheet" href="/css/adjust.css">
+
+  <link href="/css/judoc.css" rel="stylesheet">
+  <link href="/css/vela.css" rel="stylesheet">
+  <script src="/libs/vela/jquery.min.js"></script>
+
   <link rel="icon" href="/assets/infra/favicon.png">
-  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+
+  <title>JuDoc Example | Vela</title>
 </head>
 <body>
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+  <div class="main-nav" id="menu">
+    <div class="flex-container">
+      <span class="sidebar-brand">
+        <h3 style='font-size: 25px'>Vela Template</h3>
+      </span>
+    </div> <!-- class="flex-container" -->
 
-<!-- Toggleable sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p>cserteGT3's blog</p>
-  </div>
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item {{ispage /index.html}}active{{end}}" href="/">Home</a>
-    <a class="sidebar-nav-item {{ispage /pub/menu1.html}}active{{end}}" href="/pub/menu1.html">Code blocks</a>
-    <a class="sidebar-nav-item {{ispage /pub/menu2.html}}active{{end}}" href="/pub/menu2.html">Menu 2</a>
-    <a class="sidebar-nav-item {{ispage /pub/menu3.html}}active{{end}}" href="/pub/menu3.html">Menu 3</a>
-  </nav>
-  <div class="sidebar-item">
-    <p>&copy; {{fill author}}.</p>
-  </div>
-</div>
+    <nav class="sidebar-nav">
+      <ul class="metismenu"  id="metismenu" >
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/pub/menu1.html">Code blocks</a></li>
+        <li><a href="" class="has-arrow">Topic</a>
+          <ul>
+            <li><a href="/pub/menu2.html">Menu 2</a></li>
+          </ul>
+        </li>
+        <li><a href="/pub/menu3.html">Menu 3</a></li>
+      </ul>
+    </nav>
+  </div> <!-- main nav menu -->
 
-<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-content to avoid any CSS collisions with our real content. -->
-<div class="wrap">
-  <div class="masthead">
-    <div class="container">
-      <h3 class="masthead-title">
-        <a href="/" title="Home">cserteGT3's blog</a>
-      </h3>
+  <main id="panel">
+    <div class="toggle-button hamburger hamburger--spin">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
     </div>
-  </div>
+    <h1 class="page title">{{isdef title}}{{fill title}}{{end}}</h1>
+    <hr>
 
-  <div class="container content">
+
 <!-- Content appended here -->
