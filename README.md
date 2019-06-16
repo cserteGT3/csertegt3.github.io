@@ -1,7 +1,9 @@
-# That is the repository for my blog.
+# That is the repository for my blog
 
 # Acknowledgments
 
-Thank you Barry Clark for your [tutorial](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/) and  also [Jonathan Mcglone](http://jmcglone.com/guides/github-pages/).
+I changed from jekyll to [JuDoc.jl](https://github.com/tlienart/JuDoc.jl).
 
-I decided to use the [Neo-HPSTR Theme](https://github.com/aron-bordin/neo-hpstr-jekyll-theme).
+To setup my github page, I followd [these](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/) [tutorials](http://jmcglone.com/guides/github-pages/).
+
+When I used jekyll, I used the [Neo-HPSTR Theme](https://github.com/aron-bordin/neo-hpstr-jekyll-theme).
