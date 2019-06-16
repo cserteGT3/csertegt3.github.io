@@ -1,11 +1,6 @@
----
-layout: post
-title: How to use Julia properly?
-description: "Useful thoughts on using Julia."
-modified: 2019-02-25
-tags: [julia, development]
-categories: [julia]
----
+@def title = "Useful thoughts on Julia"
+@def hascode = true
+
 This post gathers useful thoughts on Julia.
 These are not my ideas, I gathered some from everywhere on the internet.
 I'll try and link the source everywhere it's possible.
@@ -19,9 +14,9 @@ This is an extraction of a Julia discourse [thread](https://discourse.julialang.
 
 _I think what you’re talking about is “fluent interfaces”, and it’s true that we don’t really do that in Julia, at least not in the same way.
 You might find the |> operator useful, since you can do:_
-~~~julia
+```julia
 x |> f |> g
-~~~
+```
 _as an alternative notation for_ `g(f(x))`.
 _This should become even better when we (eventually) get [this PR](https://github.com/JuliaLang/julia/pull/24990) merged._
 
@@ -117,18 +112,18 @@ dlfivefifty
 
 _I had a similar experience. When I started programming Julia, I used to build elaborate type hierarchies like_
 
-~~~julia
+```julia
 abstract type AbstractGizmo end
 abstract type AbstractSpecialGizmo <: AbstractGizmo end
 function f(g::AbstractGizmo)
     do_stuff(g)
 end
-~~~
+```
 
 _This gave me the illusion of doing something clever until I encountered things which wanted to be two or more kinds of abstract things at the same time.
 Now whenever I refactor code, I tend do_
 
-~~~julia
+```julia
 using ArgCheck
 
 abstract type AbstractGizmo end
@@ -143,7 +138,7 @@ function f(g)
     @argcheck is_gizmo(g) "Argument does not support the required interface."
     do_stuff(g)
 end
-~~~
+```
 
 #### chakravala
 
@@ -166,7 +161,7 @@ Tamas_Papp
 > is_gizmo...
 
 _I was under the impression the establish pattern for traits was something like this:_
-~~~julia
+```julia
 abstract type Iteration end
 struct HasIterate <: Iteration end
 struct NoIterate  <: Iteration end
@@ -176,5 +171,5 @@ Iteration(::T) where T = Iteration(T)
 somefunc(x) = somefunc(Iterate(x), x)
 somefunc(::HasIterate, x) = ...
 somefunc(::NoIterate, x) = ...
-~~~
+```
 _I got that impression from [here](https://docs.julialang.org/en/v1/manual/methods/#Trait-based-dispatch-1), but maybe I’m not doing it right._

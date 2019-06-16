@@ -1,14 +1,9 @@
----
-layout: post
-title: Setup Jekyll on Windows
-description: "A small tutorial on how to setup jekyll on windows."
-modified: 2018-12-27
-tags: [test, jekyll]
-categories: [firsts]
----
+@def title = "Setup Jekyll on Windows"
+@def hascode = true
 
 This is a small guide for setting up Jekyll on Windows.
 Mostly it's just a link collection.
+I gathered it for myself, but it's not important by now, as I use [JuDoc.jl](https://github.com/tlienart/JuDoc.jl).
 
 ## Install Ruby
 
@@ -32,9 +27,9 @@ If it throws an error, these steps may help:
 ### Updates
 
 It's possible that you need to update your softwares (but I'm not sure when):
-~~~console
+```bash
 gem update --system
-~~~
+```
 
 ### Neo-Hpstr-Theme dependencies
 
@@ -49,10 +44,10 @@ In short:
 * run `gem install tzinfo-data`
 
 Add the following lines in the `Gemfile`:
-~~~
+```
 gem 'tzinfo', '2.0.0'
 gem 'tzinfo-data', '1.2018.9'
-~~~
+```
 The version numbers(?) should be as the installed ones.
 
 
@@ -61,8 +56,8 @@ With these `jekyll serve` should work properly.
 ## Create batch file
 
 Create a `.bat` file:
-~~~
+```
 cd "path_to_your_github_repo"
 
 jekyll serve
-~~~
+```

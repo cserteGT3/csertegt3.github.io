@@ -1,11 +1,6 @@
----
-layout: post
-title: How to setup youtube-dl?
-description: "Setup youtube-dl on windows."
-modified: 2019-04-09
-tags: [yt-download, opensource]
-categories: [tools]
----
+@def title = "How to setup youtube-dl"
+@def hascode = true
+
 This post is on installing the [youtube-dl](https://github.com/ytdl-org/youtube-dl/) tool on a Windows computer.
 
 ## Download
@@ -19,7 +14,7 @@ Again, check the installation instructions, but `C:\Users\username\yt-dl` is for
 Put that folder into your PATH variable (usually in your own user's PATH).
 In english search for the term: `windows path variable`, in hungarian: `windows path környezeti változó`.
 At this point the following should work (of course with your installed version):
-```console
+```bash
 C:\Users\username\youtube-dl --version
 2019.02.18
 ```
