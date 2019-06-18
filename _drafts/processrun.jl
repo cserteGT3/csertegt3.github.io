@@ -9,15 +9,13 @@ export Workout
 abstract type AbstractWorkoutType end
 
 struct RunningWorkout <: AbstractWorkoutType
-	place::String
-	duration::Time
+	road::String
 	distance::Float64
-	averagepace::Float64
+	duration::Time
 end
 
 struct GymWorkout <: AbstractWorkoutType
 	type::String
-	place::String
 	duration::Time
 end
 
@@ -26,6 +24,7 @@ struct Workout{T<:AbstractWorkoutType}
 	date::DateTime
 	weight::Float64
 	workout::T
+	place::String
 	effort::Union{Int64, Nothing}
 	notes::Union{String, Nothing}
 end
