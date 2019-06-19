@@ -6,6 +6,9 @@ using Dates
 export AbstractWorkoutType, RunWorkout, GymWorkout, SwimWorkout
 export Workout
 export parseworkouttype, parseline
+export gettraining
+export isrun, isswim, isgym
+export runindices, swimindices, gymindices
 
 abstract type AbstractWorkoutType end
 
@@ -30,10 +33,12 @@ struct Workout{T<:AbstractWorkoutType}
 	date::DateTime
 	weight::Float64
 	place::String
-	workout::T
+	training::T
 	effort::Union{Int64, Nothing}
 	notes::Union{String, Nothing}
 end
+
+gettraining(w::Workout) = w.training
 
 const DATEFORMAT = "yyyy.mm.dd-H:M"
 
@@ -64,5 +69,13 @@ function parseline(l, dateform)
 	comnot = nothinger(l[10])
 	Workout(time, l[3], String(l[4]), parseworkouttype(l), inot, comnot)
 end
+
+isrun(w::Workout) = gettraining(w) isa RunWorkout
+isswim(w::Workout) = gettraining(w) isa SwimWorkout
+isgym(w::Workout) = gettraining(w) isa GymWorkout
+
+runindices(W) = [isrun(w) for w in W]
+swimindices(W) = [isswim(w) for w in W]
+gymindices(W) = [isgym(w) for w in W]
 
 end # module
