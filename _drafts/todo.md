@@ -17,6 +17,7 @@
 
 * [ ] plot - Makie/GR/PlotlyJS/Gplot
 * - [ ] runplot
-* - - [ ] how to skip gyms
+* - - [ ] how to skip not runs
+* - - [ ] convert to missing, then to NaN
 * [ ] oneshot function (do everything)
 * [ ] get `Literate.jl` working
