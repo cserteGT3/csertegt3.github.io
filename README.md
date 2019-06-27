@@ -1,5 +1,7 @@
 # That is the repository for my blog
 
+# **This repository is outdated as I moved it to GitLab.**
+
 # Acknowledgments
 
 I changed from jekyll to [JuDoc.jl](https://github.com/tlienart/JuDoc.jl).
